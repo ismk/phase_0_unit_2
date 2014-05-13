@@ -15,6 +15,15 @@
 
 # 2. Initial Solution
 
+def median(array)
+  middle_number = array.length / 2
+  array.sort!
+  if array.length.even?
+    (array[middle_number - 1] + array[middle_number])/ 2.0
+  else
+    array[middle_number]
+  end
+end
 
 
 
