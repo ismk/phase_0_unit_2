@@ -14,7 +14,18 @@
 
 
 # 2. Initial Solution
-
+def get_grade(arr)
+	final = 0
+	arr.each{ |score| final += score}
+	grade = final / arr.length
+	case grade
+	when 90..100 then 'A'
+	when 80..90 then 'B'
+	when 70..80 then 'C'
+	when 60..70 then 'D'
+	when 0..60 then 'F'
+	end
+end
 
 
 
