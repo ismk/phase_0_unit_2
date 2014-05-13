@@ -14,7 +14,17 @@
 
 
 # 2. Initial Solution
+def total(arr)
+	sum	= 0
+	arr.each{|i| sum+= i}
+	return sum
+end
 
+def sentence_maker(arr)
+	arr[0].capitalize!
+	arr[-1] = arr[-1] + "."
+	arr.join(" ")
+end
 
 
 

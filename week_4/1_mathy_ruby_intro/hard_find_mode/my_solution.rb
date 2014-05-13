@@ -15,7 +15,16 @@
 
 # 2. Initial Solution
 
+def mode(arr)
+	arr.sort!
+	freq_val = Hash.new(0)
+	arr.each{ |i|
+	 freq_val[i] += 1 }
+	 freq_val.sort_by { |k,v| v}
+	 return freq_val.values[0]
+end
 
+puts mode([1,1,1,2,3,4,5,6])
 
 
 # 3. Refactored Solution
