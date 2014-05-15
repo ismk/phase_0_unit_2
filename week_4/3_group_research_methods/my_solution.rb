@@ -35,11 +35,13 @@ end
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
+	source.sort{|a,b| a.to_s<=>b.to_s}
+	# source.sort_by{|i| i.to_s}
 end
 
 def my_hash_sorting_method(source)
-  # Your code here!
+  source.sort{|a,b| a[0]<=>b[0]}
+  # source.sort_by{|key,value| value}
 end
 
 # Identify and describe the ruby method you implemented. 
