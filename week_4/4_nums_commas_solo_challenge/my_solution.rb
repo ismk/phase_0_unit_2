@@ -13,7 +13,10 @@
 
 
 # 2. Initial Solution
+def seperate_comma(int)
+	
 
+end
 
 
 
