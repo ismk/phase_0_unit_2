@@ -13,9 +13,19 @@
 
 
 # 2. Initial Solution
-def seperate_comma(int)
-	
+def seperate_comma int
+	int = int.to_s.split('')
+	final = []
 
+	if int.length > 3
+		while int.length > 3
+			final.unshift(int.pop(3))
+			final.unshift([","])
+		end
+	else
+		final[1..-1]
+	end
+	final.insert(0,int).join('')
 end
 
 
