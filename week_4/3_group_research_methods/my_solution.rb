@@ -52,11 +52,11 @@ end
 
 # Person 4
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.reject!{|element| element.to_s.include? thing_to_delete}
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+  source.reject!{|key| key.to_s.include? thing_to_delete}
 end
 
 # Identify and describe the ruby method you implemented. 
