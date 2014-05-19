@@ -12,12 +12,12 @@
 
 
 def north_korean_cipher(coded_message)
-  input = coded_message.downcase.split("") # Check out this method in IRB to see how it works! Also refer to the ruby docs.
+  input = coded_message.downcase.split("") # the first method turns all the characters into lowercase and the second method splits into single characters and puts it in a array.
   decoded_sentence = []
   cipher = {"e" => "a",   # This is technically a shift of four letters...Can you think of a way to automate this? Is a hash
             "f" => "b",   # the best data structure for this problem? What are the pros and cons of hashes?
-            "g" => "c", 
-            "h" => "d", 
+            "g" => "c",   # Well hashes can only have a unique key for values, the values can repeat but not the key, so if we
+            "h" => "d",   # wanted repeating keys, we could implement an Array, it would be easier to rotate too.
             "i" => "e", 
             "j" => "f",
             "k" => "g",
@@ -41,34 +41,34 @@ def north_korean_cipher(coded_message)
             "c" => "y",
             "d" => "z"}
             
-  input.each do |x| # What is #each doing here?
-    found_match = false  # Why would this be assigned to false from the outset? What happens when it's true?
-    cipher.each_key do |y| # What is #each_key doing here?
-      if x == y  # What is this comparing? Where is it getting x? Where is it getting y? What are those variables really?
+  input.each do |x| # What is #each doing here? A. iterating each character in the input array.
+    found_match = false  # Why would this be assigned to false from the outset? What happens when it's true? A. Here we use a boolean value to determine if we should break out of the if loop, if the match is not found its get added to the message.
+    cipher.each_key do |y| # What is #each_key doing here? A. iterating each key in cipher.
+      if x == y  # What is this comparing? Where is it getting x? Where is it getting y? What are those variables really? A. its comparing each character from the input(i.e X) to the hash cipher(i.e Y).
         puts "I am comparing x and y. X is #{x} and Y is #{y}."
         decoded_sentence << cipher[y]
         found_match = true
-        break  # Why is it breaking here?
+        break  # Why is it breaking here? A. because it found a character that matches and it has to add it to the final message.
       elsif x == "@" || x == "#" || x == "$" || x == "%"|| x == "^" || x == "&"|| x =="*" #What the heck is this doing?
         decoded_sentence << " "
         found_match = true
         break
-      elsif (0..9).to_a.include?(x) # Try this out in IRB. What does   " (0..9).to_a "    do?
+      elsif (0..9).to_a.include?(x) # Try this out in IRB. What does   " (0..9).to_a "    do? A. its a range that gives out numbers from 0 to 9 and the method to_a converts it to an array.
         decoded_sentence << x
         found_match = true
         break
       end 
     end
-    if not found_match  # What is this looking for?
+    if not found_match  # What is this looking for? A. if there is no matching character, just add it to the final message.
       decoded_sentence << x
     end
   end
   decoded_sentence = decoded_sentence.join("")
  
-  if decoded_sentence.match(/\d+/) #What is this matching? Look at Rubular for help. 
+  if decoded_sentence.match(/\d+/) #What is this matching? Look at Rubular for help.  A. get all digits.
     decoded_sentence.gsub!(/\d+/) { |num| num.to_i / 100 } #He's been known to exaggerate...
   end  
-  return decoded_sentence # What is this returning?        
+  return decoded_sentence # What is this returning? A. the final message 
 end
 
 # Your Refactored Solution
@@ -111,9 +111,9 @@ p north_korean_cipher("ger^wsqifshc*nywx^kix^qi&10000*fekw@sj$gssp%vergl@hsvmxsw
 # It was interesting doing this challenge…sadly I couldn’t find a partner in time to pair for this challenge, 
 # but it was fun trying to figure out how to refractor the code as efficiently as possible, I first tried using 
 # the ruby regex to find the special, white space and number characters, but felt it was sloppy because i was already
-# implementing a Hash for the cipher, so for better readability  and understudying, I thought I’ll keep using the 
+# implementing a Hash for the cipher, so for better readability and understanding, I thought I’ll keep using the 
 # hash that way if someone else reads my code they can figure out that I kept comparing each character with the hash 
-# key and then retrieved the corresponding value, i wish i could streamlined the adding the special characters and the 
+# key and then retrieved the corresponding value, I wish I could streamlined the adding the special characters and the 
 # numbers into the hash though.
 
  
