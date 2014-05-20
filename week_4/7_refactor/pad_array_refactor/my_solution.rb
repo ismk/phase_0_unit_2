@@ -20,7 +20,16 @@
 
 
 # 3. My original solution:
+class Array
+	def pad!(int, opt=nil)
+		self.length < int ? (int-self.length).times {self << opt} : self
+		self
+	end
 
+	def pad(int, opt=nil)
+		self.clone.pad!(int,opt)
+	end
+end
 
 
 # 4. My refactored solution:

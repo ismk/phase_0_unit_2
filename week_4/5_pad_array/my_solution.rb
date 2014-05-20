@@ -63,7 +63,7 @@ class Array
 
 	def pad(int, opt=nil)
 		new_array = Array.new(self)
-		new_array.length < int ? (int-new_array.length).times {new_array << opt} : new_array
+		new_array.length < int ? (int.new_array.length).times {new_array << opt} : new_array
 		new_array
 	end
 end
