@@ -8,7 +8,11 @@
 # 1. Pseudocode
 
 # What is the input?
+# A. A positive integer value.
+
 # What is the output? (i.e. What should the code return?)
+# A. A string of numbers digtially grouped.
+
 # What are the steps needed to solve the problem?
 
 
