@@ -14,7 +14,14 @@
 # A. A string of numbers digtially grouped.
 
 # What are the steps needed to solve the problem?
-
+# Declare method seperate_comma that takes one parameter a integer value
+# 	 integer_value = Array of individual numbers (split)
+# 	 if integer_value.length > 3
+# 	 	untill integer_value < 3
+# 	 		final = final + integer_value[last 3] + ","
+# 		End Untill loop
+# 	 Else Return integer 
+# 	 End If Else Loop
 
 # 2. Initial Solution
 def seperate_comma int
@@ -39,3 +46,8 @@ end
 
 
 # 4. Reflection 
+# I tried to solve this challenge in different ways, of course
+# the easiest way would’ve been to reverse the digits and remove
+# the first 3 elements  and then add the comma, but I wanted to 
+# practice with new shift methods in Array 
+ 
