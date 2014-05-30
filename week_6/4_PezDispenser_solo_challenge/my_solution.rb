@@ -1,7 +1,7 @@
 # U2.W6: PezDispenser Class from User Stories
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself].
 
 # 1. Review the following user stories:
 # - As a pez user, I'd like to be able to "create" a new pez dispenser with a group of flavors that 
@@ -21,9 +21,26 @@
 # 3. Initial Solution
 
 class PezDispenser
- 
-# your code here!
- 
+	def initialize(types)
+		@types = types
+	end
+
+	def pez_count
+		@types.count
+	end
+
+	def see_all_pez
+		@types.each{ |flavour|
+			flavour
+		}
+	end
+	def add_pez(add_flavour)
+		@types << add_flavour
+	end
+	def get_pez
+		@types.delete(@types.sample)
+	end
+
 end
  
 

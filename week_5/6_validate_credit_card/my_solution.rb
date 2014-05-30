@@ -93,17 +93,21 @@ class CreditCard
 end
 
 
+def assert
+	raise "Assertion failed!" unless yield
+end
+
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
 cc = CreditCard.new(4563960122001999)
-p cc.check_card
+p cc.check_card == true
 
 
 
 
 # 5. Reflection
-# definitely learned a lot in this exercise mostly about the map methods, 
-# i would like to spend more time and streamline the code, refactor it properly 
+# definitely learned a lot in this exercise mostly about the map methods,
+# i would like to spend more time and streamline the code, refactor it properly
 # so as have a cleaner look for splitting the double-digits in the array.

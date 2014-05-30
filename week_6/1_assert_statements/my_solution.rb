@@ -1,6 +1,6 @@
 # U2.W6: Testing Assert Statements
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Marek ].
 
 
 # 2. Review the simple assert statement
@@ -10,11 +10,11 @@ def assert
 end
 
 name = "bettysue"
-assert { name == "bettysue" }
-assert { name == "billybob" }
+p assert { name == "bettysue" }
+# assert { name == "billybob" }
 
 # 2. Pseudocode what happens when the code above runs
-
+# Whe
 
 
 # 3. Copy your selected challenge here
