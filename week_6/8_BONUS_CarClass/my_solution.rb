@@ -40,9 +40,6 @@ class Car
 
 end
 
-
-
-
 # 4. Refactored Solution
 
 
