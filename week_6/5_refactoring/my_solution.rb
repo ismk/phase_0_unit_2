@@ -62,10 +62,9 @@ valid_number = 4563960122001999
 credit = CreditCard.new(valid_number)
 assert { credit.check_card() }
 
-invalid_number = ("1"*16).to_i
+invalid_number = ("1"*15).to_i
 credit = CreditCard.new(invalid_number)
-assert { credit.check_card() }
-
+assert { credit.check_card() } rescue p $!.message
 
 
 

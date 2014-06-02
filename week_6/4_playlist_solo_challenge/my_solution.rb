@@ -5,40 +5,64 @@
 
 
 # Pseudocode
-# DEFINE CLASS Song
-	# METHOD initialize(2 PARAMETERS: <title>(String Value), <artist>(String Value))
-	# initialize instance variables title
-	# initialize instance variables artist
-	# END METHOD
-	# METHOD title
-	# 	RETURN instance title
-	# END METHOD
-	# METHOD artist
-	# 	RETURN instance artist
-	# END METHOD
-	# METHOD play
-	# 	print "#{@title} by #{@artist} is playing" 
-	# END METHOD
+=begin
 
-# END CLASS
+DEFINE CLASS Song
+	METHOD initialize(2 PARAMETERS: <title>(String Value), <artist>(String Value))
+	initialize instance variables title
+	initialize instance variables artist
+	END METHOD
+	METHOD title
+		RETURN instance title
+	END METHOD
+	METHOD artist
+		RETURN instance artist
+	END METHOD
+	METHOD play
+		print "#{@title} by #{@artist} is playing" 
+	END METHOD
 
-# DEFINE CLASS Playlist INHERITS CLASS Song
-# 	METHOD initialize('n' NUMBER OF PARAMETER(s): <list>(Object Type))
-# 	initialize instance variables title
-# 	initialize instance variables artist
-# 	END METHOD
-# 	METHOD title
-# 		RETURN instance title
-# 	END METHOD
-# 	METHOD artist
-# 		RETURN instance artist
-# 	END METHOD
-# 	METHOD play
-# 		print "#{@title} by #{@artist} is playing" 
-# 	END METHOD
+END CLASS
 
-# END CLASS
+DEFINE CLASS Playlist
 
+	METHOD initialize('n' NUMBER OF PARAMETER(s): <list>(Object Type))
+	initialize instance variables play_list = empty Array []
+	LOOP through list elements
+		ADD each song to Array play_list
+		play_list << song
+	END METHOD
+
+	METHOD add('n' NUMBER OF PARAMETER(s): <song> )
+	LOOP through song elements
+		ADD each song to Array play_list
+		play_list << song
+	END METHOD
+
+	METHOD num_of_tracks
+		RETURN play_list.count
+	END METHOD
+
+	METHOD remove (1 PARAMETER: song_to_remove)
+		RETURN play_list.delete(song_to_remove) 
+	END METHOD
+
+	METHOD includes? (1 PARAMETER: song)
+		RETURN IF play_list.include(song) 
+	END METHOD
+
+	METHOD play_all
+		RETURN play_list.play(songs) 
+	END METHOD
+
+	METHOD display
+	LOOP through play_list
+		PRINT play_list.song
+	END METHOD
+
+END CLASS
+
+=end
 
 
 # Initial Solution
@@ -114,7 +138,7 @@ class Song
 	end
 end
 
-class Playlist < Song
+class Playlist
 	def initialize(*list)
 		@list = list
 	end
